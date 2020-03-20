@@ -13,6 +13,7 @@
           $pass = '';
           $charset = 'utf8mb4';
 
+ 
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -60,6 +61,7 @@
                         <tr>
                             <td>${row['title']}</td>
                             <td>${row['rating']}</td>
+                            <td><a href="series.php?id=${row['id']}">Meer info</a></td>
                         </tr>
                     EOT;
                 }
@@ -84,6 +86,7 @@
                             <tr>
                                 <td>${row['Title']}</td>
                                 <td>${row['Duur']}</td>
+                                <td><a href="films.php?id=${row['ID']}">Meer info</a></td>
                             </tr>
                         EOT;
             }

@@ -7,7 +7,7 @@
 <body>
     <a href="index.php">Terug</a>
     <?php
-      function select($quary){
+    $result;
     $host = 'localhost';
     $db   = 'netland';
     $user = 'root';
@@ -20,15 +20,13 @@
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
-
         try {
             $pdo = new PDO($dsn, $user, $pass, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
-        $query = 'SELECT * FROM films WHERE ID =' . $_GET['ID']  ;
+        $query = 'SELECT * FROM films Where ID =' . $_GET['id'] ;
         $result = $pdo->query($query)->fetch();
-        }
     ?>
     <table>
         <tbody>
